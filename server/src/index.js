@@ -1,9 +1,11 @@
 import express from 'express';
+var cors = require('cors');
 import decodeFromBase64 from './imgcodecs';
 import ObjectDetection from './objectRecognition';
 
 const app = express();
 
+app.use(cors());
 app.use(require('body-parser').json({ limit: '10mb' }));
 
 const requiresImgBase64 = (req, res, next) => {
