@@ -1,0 +1,17 @@
+client:
+  build: ./client
+  restart: always
+  volumes:
+    - "./client:/client"
+  ports:
+    - "8080:8080"
+  command: yarn start:production -port 8080
+api:
+  build: ./server
+  restart: always
+  volumes:
+    - "./server:/server"
+    - "/server/node_modules"
+  ports:
+    - "3000:3000"
+  command: npm run start
