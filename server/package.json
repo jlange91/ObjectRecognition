@@ -1,15 +1,15 @@
 {
-  "name": "app",
-  "version": "1.0.0",
-  "description": "",
+  "name": "object_recognition_server",
+  "version": "0.0.1",
+  "description": "React server for object recognition API",
   "main": "index.js",
   "scripts": {
     "start": "nodemon -L src/index.js --exec babel-node",
     "test": "jest"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Julien Lange",
+  "license": "WTFPL",
   "dependencies": {
     "axios": "^0.18.0",
     "babel-cli": "^6.26.0",

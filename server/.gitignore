@@ -1,4 +1,5 @@
 node_modules
+src/objectRecognition/SSD_300x300
 
 # OS generated files #
 ######################

@@ -9,7 +9,7 @@ if (!cv.xmodules.dnn) {
 }
 
 // replace with path where you unzipped inception model
-const ssdcocoModelPath = '/server/src/objectRecognition/coco-SSD_300x300';
+const ssdcocoModelPath = '/server/src/objectRecognition/SSD_300x300';
 
 const prototxt = path.resolve(ssdcocoModelPath, 'deploy.prototxt');
 const modelFile = path.resolve(
@@ -31,7 +31,6 @@ const ObjectDetection = img => {
   const predictions = classifyImg(img).filter(
     res => res.confidence > minConfidence,
   );
-  console.log(predictions);
   return predictions;
 };
 

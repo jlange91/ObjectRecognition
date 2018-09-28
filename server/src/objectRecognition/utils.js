@@ -2,7 +2,7 @@ import cv from '/usr/lib/node_modules/opencv4nodejs';
 import path from 'path';
 import classNames from './dnnCocoClassNames';
 
-const ssdcocoModelPath = '/server/src/objectRecognition/coco-SSD_300x300';
+const ssdcocoModelPath = '/server/src/objectRecognition/SSD_300x300';
 
 const prototxt = path.resolve(ssdcocoModelPath, 'deploy.prototxt');
 const modelFile = path.resolve(

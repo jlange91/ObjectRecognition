@@ -1,5 +1,5 @@
 import express from 'express';
-var cors = require('cors');
+import cors from 'cors';
 import decodeFromBase64 from './imgcodecs';
 import ObjectDetection from './objectRecognition';
 
