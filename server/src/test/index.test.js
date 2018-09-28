@@ -17,7 +17,6 @@ test('Good request expected', () => {
       imgBase64: img,
     })
     .then(function(response) {
-      console.log(response.status);
       expect(response.status).toEqual(202);
     });
 });
@@ -30,9 +29,8 @@ test('Bad request expected', () => {
     .post('http://localhost:3000/objectRecognition', {
       imgBase64: img,
     })
-    .then(function(response) {
-      console.log(response.status);
-      expect(response.status).toEqual(404);
-    })
-    .catch(err => {});
+    .then(function(response) {})
+    .catch(err => {
+      expect(err.response.status).toEqual(404);
+    });
 });
