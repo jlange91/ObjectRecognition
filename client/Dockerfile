@@ -1,7 +1,7 @@
-FROM node:alpine
+FROM node:10
 
 WORKDIR /client
 
-COPY . /client/
+COPY . /client
 
 RUN yarn

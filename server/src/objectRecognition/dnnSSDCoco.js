@@ -32,6 +32,7 @@ const ObjectDetection = img => {
     res => res.confidence > minConfidence,
   );
   console.log(predictions);
+  return predictions;
 };
 
 export default ObjectDetection;
