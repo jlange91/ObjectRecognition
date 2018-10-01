@@ -6,6 +6,17 @@
     <!-- Make the page mobile compatible -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style type="text/css">
+      html {
+        height: 100%;
+      }
+      body {
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
     <title>React.js Boilerplate</title>
   </head>
   <body>
@@ -13,7 +24,7 @@
     <noscript>If you're seeing this message, that means <strong>JavaScript has been disabled on your browser</strong>, please <strong>enable JS</strong> to make this app work.</noscript>
 
     <!-- The app hooks into this div -->
-    <div id="app"></div>
+    <div id="app" style="height:100%;width:100%;"></div>
     <!-- A lot of magic happens in this file. HtmlWebpackPlugin automatically includes all assets (e.g. bundle.js, main.css) with the correct HTML tags, which is why they are missing in this HTML file. Don't add any assets here! (Check out webpackconfig.js if you want to know more) -->
   </body>
 </html>

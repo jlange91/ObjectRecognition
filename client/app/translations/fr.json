@@ -1,0 +1,9 @@
+{
+  "app.components.Header.title": "Reconaissance d'objet",
+  "app.components.HomePage.header": "",
+  "app.components.NotFoundPage.header": "",
+  "app.components.UploadButton.upload": "Télécharger une image",
+  "app.components.SendButton.header": "Envoyer",
+  "boilerplate.containers.LocaleToggle.fr": "",
+  "boilerplate.containers.LocaleToggle.en": ""
+}
