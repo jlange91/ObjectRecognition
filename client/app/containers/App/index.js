@@ -14,16 +14,47 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import HomePage from 'containers/HomePage/Loadable';
-import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import { withStyles } from '@material-ui/core/styles';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { blue } from '@material-ui/core/colors';
 
-export default function App() {
+import HomePage from 'containers/HomePage';
+import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import Header from 'components/Header';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      light: '#757ce8',
+      main: blue[300],
+      dark: '#002884',
+      contrastText: '#fff',
+    },
+  },
+});
+
+const styles = {
+  root: {
+    minHeight: '100%',
+    minWidth: '440px',
+    backgroundColor: '#F2F2F2',
+  },
+};
+
+function App(props) {
+  const { classes } = props;
+
   return (
-    <div>
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route component={NotFoundPage} />
-      </Switch>
-    </div>
+    <MuiThemeProvider theme={theme}>
+      <div className={classes.root}>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route component={NotFoundPage} />
+        </Switch>
+      </div>
+    </MuiThemeProvider>
   );
 }
+
+export default withStyles(styles)(App);
