@@ -2,21 +2,27 @@ import { createSelector } from 'reselect';
 import { initialState } from './reducer';
 
 /**
- * Direct selector to the test state domain
+ * Direct selector to the HomePage state domain
  */
 
-const selectImage = state => state.get('HomePage', initialState);
+const selectHomePage = state => state.get('request', initialState);
 
 /**
  * Other specific selectors
  */
 
-/**
- * Default selector used by Test
- */
-
 const makeSelectImage = () =>
-  createSelector(selectImage, ImageState => ImageState.get('image'));
+  createSelector(selectHomePage, ImageState => ImageState.get('image'));
 
-export default makeSelectImage;
-export { selectImage };
+const makeSelectConfidence = () =>
+  createSelector(selectHomePage, ConfidenceState =>
+    ConfidenceState.get('confidence'),
+  );
+
+const makeSelectResponse = () =>
+  createSelector(selectHomePage, ResponseState =>
+    ResponseState.get('response'),
+  );
+
+export default selectHomePage;
+export { makeSelectImage, makeSelectResponse, makeSelectConfidence };
