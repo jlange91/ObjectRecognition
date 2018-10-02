@@ -1,9 +1,13 @@
 {
+  "app.components.NotFoundPage.header": "Page doesn't exist",
   "app.components.Header.title": "Object Recognition",
-  "app.components.HomePage.header": "This is HomePage component!",
-  "app.components.NotFoundPage.header": "This is NotFoundPage component!",
   "app.components.UploadButton.upload": "Upload Image",
   "app.components.SendButton.header": "Send",
-  "boilerplate.containers.LocaleToggle.de": "fr",
-  "boilerplate.containers.LocaleToggle.en": "en"
+  "app.components.ConfidenceSlider.confidence": "Minimum Confidence",
+  "app.components.ObjectTable.name": "Name",
+  "app.components.ObjectTable.confidence": "Confidence",
+  "app.components.ObjectTable.height": "Height",
+  "app.components.ObjectTable.width": "Width",
+  "app.components.ObjectRecognitionStepper.step1": "Upload image",
+  "app.components.ObjectRecognitionStepper.step2": "Send request"
 }
