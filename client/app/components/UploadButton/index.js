@@ -75,6 +75,8 @@ class UploadButton extends React.Component {
 
 UploadButton.propTypes = {
   classes: PropTypes.object.isRequired,
+  onChangeImage: PropTypes.func.isRequired,
+  imageUrl: PropTypes.string.isRequired,
 };
 
 export default withStyles(styles)(UploadButton);

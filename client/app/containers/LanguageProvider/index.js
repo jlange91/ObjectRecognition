@@ -30,8 +30,8 @@ export class LanguageProvider extends React.PureComponent {
 }
 
 LanguageProvider.propTypes = {
-  locale: PropTypes.string,
-  messages: PropTypes.object,
+  locale: PropTypes.string.isRequired,
+  messages: PropTypes.object.isRequired,
   children: PropTypes.element.isRequired,
 };
 

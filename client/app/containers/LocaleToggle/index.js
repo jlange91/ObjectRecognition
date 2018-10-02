@@ -22,8 +22,8 @@ export class LocaleToggle extends React.PureComponent {
 }
 
 LocaleToggle.propTypes = {
-  onLocaleToggle: PropTypes.func,
-  locale: PropTypes.string,
+  onLocaleToggle: PropTypes.func.isRequired,
+  locale: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = createSelector(makeSelectLocale(), locale => ({

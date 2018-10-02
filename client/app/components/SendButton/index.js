@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import axios from 'axios';
 
@@ -10,7 +11,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import styles from './styles';
 import messages from './messages';
 
-class SendButton extends React.Component {
+class SendButton extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,9 +26,10 @@ class SendButton extends React.Component {
     axios
       .post('http://localhost:3000/objectRecognition', {
         imgBase64: this.props.imageUrl,
+        confidence: this.props.confidence,
       })
       .then(response => {
-        console.log(response.data);
+        this.props.onChangeResponse(response.data);
         this.setState({
           loading: false,
         });
@@ -59,5 +61,11 @@ class SendButton extends React.Component {
     );
   }
 }
+
+SendButton.propTypes = {
+  classes: PropTypes.object.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+  onChangeResponse: PropTypes.func.isRequired,
+};
 
 export default withStyles(styles)(SendButton);
