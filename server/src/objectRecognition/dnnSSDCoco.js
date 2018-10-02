@@ -25,9 +25,7 @@ if (!fs.existsSync(prototxt) || !fs.existsSync(modelFile)) {
   throw new Error('exiting: could not find ssdcoco model');
 }
 
-const ObjectDetection = img => {
-  const minConfidence = 0.3;
-
+const ObjectDetection = (img, minConfidence) => {
   const predictions = classifyImg(img).filter(
     res => res.confidence > minConfidence,
   );
