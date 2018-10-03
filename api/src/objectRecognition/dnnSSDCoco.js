@@ -18,9 +18,9 @@ const modelFile = path.resolve(
 );
 
 if (!fs.existsSync(prototxt) || !fs.existsSync(modelFile)) {
-  console.log('could not find ssdcoco model');
+  console.log('Could not find ssdcoco model');
   console.log(
-    'download the model from: https://drive.google.com/file/d/0BzKzrI_SkD1_dUY1Ml9GRTFpUWc/view',
+    'Please download the model from: https://drive.google.com/file/d/0BzKzrI_SkD1_dUY1Ml9GRTFpUWc/view',
   );
   throw new Error('exiting: could not find ssdcoco model');
 }
