@@ -15,7 +15,7 @@ import messages from './messages';
 function ObjectTable(props) {
   const { classes, response } = props;
 
-  var id = 0;
+  let id = 0;
 
   return (
     <Paper className={classes.root}>

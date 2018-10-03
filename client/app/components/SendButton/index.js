@@ -37,7 +37,7 @@ class SendButton extends Component {
   };
 
   render() {
-    const { loading, success } = this.state;
+    const { loading } = this.state;
     const { classes } = this.props;
 
     return (
@@ -66,6 +66,7 @@ SendButton.propTypes = {
   classes: PropTypes.object.isRequired,
   imageUrl: PropTypes.string.isRequired,
   onChangeResponse: PropTypes.func.isRequired,
+  confidence: PropTypes.number.isRequired,
 };
 
 export default withStyles(styles)(SendButton);

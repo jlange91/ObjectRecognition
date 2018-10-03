@@ -15,11 +15,11 @@ class UploadButton extends React.Component {
   }
 
   handleChange(event) {
-    let file = event.target.files[0];
-    let reader = new FileReader();
-    let { onChangeImage } = this.props;
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    const { onChangeImage } = this.props;
 
-    reader.onloadend = function() {
+    reader.onloadend = () => {
       onChangeImage(reader.result);
     };
     reader.readAsDataURL(file);

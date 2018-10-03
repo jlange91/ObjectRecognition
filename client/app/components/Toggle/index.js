@@ -1,21 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import InputLabel from '@material-ui/core/InputLabel';
 import { withStyles } from '@material-ui/core/styles';
 
-const styles = theme => ({
-  test: {
-    color: 'white',
-    width: '60px',
-    textAlign: 'center',
-  },
-});
+import styles from './styles';
 
 class Toggle extends React.Component {
   state = {
@@ -50,6 +41,7 @@ class Toggle extends React.Component {
 }
 
 Toggle.propTypes = {
+  classes: PropTypes.object.isRequired,
   onToggle: PropTypes.func.isRequired,
   values: PropTypes.array.isRequired,
   value: PropTypes.string.isRequired,

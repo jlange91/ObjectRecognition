@@ -3,6 +3,11 @@
 **/.AppleDouble
 **/.LSOverride
 
+api/src/objectRecognition/SSD_300x300
+
+# Coverage directory used by tools like istanbul
+**/coverage
+
 # Logs
 **/logs
 **/*.log

@@ -1,5 +1,3 @@
-import { green, blue } from '@material-ui/core/colors';
-
 const styles = theme => ({
   root: {
     width: '100%',

@@ -6,41 +6,38 @@ import { withStyles } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepButton from '@material-ui/core/StepButton';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
 
 import messages from './messages';
 import styles from './styles';
 
-class ObjectRecognitionStepper extends React.Component {
-  render() {
-    const { classes } = this.props;
-    let step = 0;
+const ObjectRecognitionStepper = ({ classes, imageUrl, response }) => {
+  let step = 0;
 
-    step = this.props.imageUrl !== '' ? 1 : step;
-    step = this.props.response.size === 0 ? step : 2;
+  step = imageUrl !== '' ? 1 : step;
+  step = response.size === 0 ? step : 2;
 
-    return (
-      <div className={classes.root}>
-        <Stepper activeStep={step}>
-          <Step>
-            <StepButton>
-              <FormattedMessage {...messages.step1} />
-            </StepButton>
-          </Step>
-          <Step>
-            <StepButton>
-              <FormattedMessage {...messages.step2} />
-            </StepButton>
-          </Step>
-        </Stepper>
-      </div>
-    );
-  }
-}
+  return (
+    <div className={classes.root}>
+      <Stepper activeStep={step}>
+        <Step>
+          <StepButton>
+            <FormattedMessage {...messages.step1} />
+          </StepButton>
+        </Step>
+        <Step>
+          <StepButton>
+            <FormattedMessage {...messages.step2} />
+          </StepButton>
+        </Step>
+      </Stepper>
+    </div>
+  );
+};
 
 ObjectRecognitionStepper.propTypes = {
   classes: PropTypes.object,
+  imageUrl: PropTypes.string.isRequired,
+  response: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
 };
 
 export default withStyles(styles)(ObjectRecognitionStepper);

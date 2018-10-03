@@ -1,4 +1,4 @@
-const styles = theme => ({
+const styles = {
   root: {
     padding: '10px',
   },
@@ -9,6 +9,6 @@ const styles = theme => ({
     position: 'absolute',
     right: '10px',
   },
-});
+};
 
 export default styles;

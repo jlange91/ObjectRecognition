@@ -38,6 +38,9 @@ class ConfidenceSlider extends React.Component {
 
 ConfidenceSlider.propTypes = {
   classes: PropTypes.object.isRequired,
+  confidence: PropTypes.number.isRequired,
+  onChangeConfidence: PropTypes.func.isRequired,
+  disabled: PropTypes.bool.isRequired,
 };
 
 export default withStyles(styles)(ConfidenceSlider);

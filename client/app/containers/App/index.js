@@ -1,8 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-import { withStyles } from '@material-ui/core/styles';
-import { MuiThemeProvider } from '@material-ui/core/styles';
+import { withStyles, MuiThemeProvider } from '@material-ui/core/styles';
 
 import HomePage from 'containers/HomePage';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
@@ -29,5 +29,9 @@ function App(props) {
     </MuiThemeProvider>
   );
 }
+
+App.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
 
 export default withStyles(styles)(App);
