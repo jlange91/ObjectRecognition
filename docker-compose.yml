@@ -6,7 +6,6 @@ services:
     volumes:
       - "./client:/client"
       - "/client/node_modules"
-      - "/client/build"
     ports:
       - "8080:8080"
     command: yarn start:production
