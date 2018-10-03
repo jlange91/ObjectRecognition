@@ -42,9 +42,6 @@ class UploadButton extends React.Component {
           focusRipple
           className={classes.image}
           focusVisibleClassName={classes.focusVisible}
-          style={{
-            width: '100%',
-          }}
         >
           <label htmlFor="icon-button-file">
             <span

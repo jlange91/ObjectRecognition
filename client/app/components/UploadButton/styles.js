@@ -10,6 +10,7 @@ const styles = theme => ({
   image: {
     position: 'relative',
     height: 400,
+    width: '100%',
     '&:hover, &$focusVisible': {
       zIndex: 1,
       '& $imageBackdrop': {
