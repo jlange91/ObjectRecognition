@@ -8,7 +8,7 @@ Object Recognition Api with client using opencv4nodejs.
 
 - Download SSD model trained
 
-  https://drive.google.com/drive/folders/1JrdwAGz7jwahCO66ricufqeb2GmntWhP?usp=sharing
+  https://drive.google.com/file/d/1Er4yCQjQaeg1UoGrBGFNG5fh4ZmhtIVX
 
 - Install docker on your machine.
 
