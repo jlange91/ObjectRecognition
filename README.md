@@ -1,15 +1,26 @@
 # ObjectRecognition
 
-One Paragraph of project description goes here
+Object Recognition Api with client using opencv4nodejs.
 
 ## Getting Started
 
 ### Prerequisites
 
-You only need to install docker on your machine.
-https://www.docker.com/
+- Download SSD model trained
+
+  https://drive.google.com/drive/folders/1JrdwAGz7jwahCO66ricufqeb2GmntWhP?usp=sharing
+
+- Install docker on your machine.
+
+  https://www.docker.com/
 
 ### Installing
+
+#### Place SSD file:
+
+Move SSDmodel trained file in api/src/ObjectRecognition folder he must be called SSD_300x300
+
+![alt text](./Capture.png)
 
 #### Build the image:
 
