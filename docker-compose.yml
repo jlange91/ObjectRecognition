@@ -9,7 +9,7 @@ services:
       - "/client/build"
     ports:
       - "8080:8080"
-    command: yarn start:prod -port 8080
+    command: yarn start:production
   api:
     build: ./api
     restart: always
