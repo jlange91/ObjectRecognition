@@ -22,18 +22,20 @@ function ObjectTable(props) {
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <CustomTableCell>
+            <CustomTableCell className={classes.title}>
               <FormattedMessage {...messages.name} />
             </CustomTableCell>
-            <CustomTableCell numeric>
+            <CustomTableCell className={classes.title} numeric>
               <FormattedMessage {...messages.confidence} />
             </CustomTableCell>
             <CustomTableCell numeric>X</CustomTableCell>
-            <CustomTableCell numeric>Y</CustomTableCell>
-            <CustomTableCell numeric>
+            <CustomTableCell className={classes.title} numeric>
+              Y
+            </CustomTableCell>
+            <CustomTableCell className={classes.title} numeric>
               <FormattedMessage {...messages.height} />
             </CustomTableCell>
-            <CustomTableCell numeric>
+            <CustomTableCell className={classes.title} numeric>
               <FormattedMessage {...messages.width} />
             </CustomTableCell>
           </TableRow>

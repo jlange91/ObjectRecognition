@@ -25,6 +25,9 @@ const styles = theme => ({
       backgroundColor: theme.palette.background.default,
     },
   },
+  title: {
+    fontWeight: 'bold',
+  },
 });
 
 export default styles;

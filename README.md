@@ -109,6 +109,12 @@ Object Recognition Api with client using opencv4node and SSD coco models.
 
 #### Place SSD file:
 
+Extract SSD file previously download
+
+```sh
+tar xvzf SSD_300x300.tar.gz
+```
+
 Move SSDmodel trained file in api/src/ObjectRecognition folder he must be called SSD_300x300
 
 ```sh
