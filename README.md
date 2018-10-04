@@ -2,7 +2,7 @@
 
 ## Description
 
-Object Recognition Api with client using opencv4node and SSD coco models.
+Object Recognition Api with Client using opencv4node and SSD with coco models.
 
 <details>
   <summary>
@@ -97,7 +97,7 @@ Object Recognition Api with client using opencv4node and SSD coco models.
 
 ### Prerequisites
 
-- Download SSD model trained
+- Download SSD trained model
 
   https://drive.google.com/file/d/1Er4yCQjQaeg1UoGrBGFNG5fh4ZmhtIVX
 
@@ -105,17 +105,17 @@ Object Recognition Api with client using opencv4node and SSD coco models.
 
   https://www.docker.com/
 
-### Installing
+### Installation
 
 #### Place SSD file:
 
-Extract SSD file previously download
+Extract SSD file previously downloaded
 
 ```sh
 tar xvzf SSD_300x300.tar.gz
 ```
 
-Move SSDmodel trained file in api/src/ObjectRecognition folder he must be called SSD_300x300
+Move SSD trained model file into api/src/ObjectRecognition folder it must be called SSD_300x300
 
 ```sh
 api/src/objectRecognition
@@ -143,15 +143,15 @@ docker-compose up
 - Go to http://localhost:8080
 - Upload image <br>
   `you can choose an image from /images folder`
-- Select your confidence
+- Select your level of confidence
 - Send request
 
 ## Improvement
 
 - [ ] Sorted data response
-- [ ] Display the image with the data represented by a rectangle
-- [ ] Add some other coco models
-- [ ] Add other custom themes for material-ui
+- [ ] Display the image showing rectangles representing the data recognition.
+- [ ] Add additional coco models
+- [ ] Add more custom themes for material-ui
 
 ## Built With
 
