@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
 import { withStyles } from '@material-ui/core/styles';
@@ -12,83 +11,38 @@ import UploadButton from 'components/UploadButton';
 import SendButton from 'components/SendButton';
 import ObjectTable from 'components/ObjectTable';
 import ConfidenceSlider from 'components/ConfidenceSlider';
+import ORCanvas from 'components/ORCanvas';
 
 import injectReducer from 'utils/injectReducer';
-import {
-  makeSelectImage,
-  makeSelectResponse,
-  makeSelectConfidence,
-} from './redux/selectors';
 import reducer from './redux/reducer';
-import {
-  changeImageAction,
-  changeResponseAction,
-  changeConfidenceAction,
-} from './redux/actions';
 
 import styles from './styles';
 
-const HomePage = ({
-  classes,
-  response,
-  imageUrl,
-  onChangeImage,
-  onChangeResponse,
-  onChangeConfidence,
-  confidence,
-}) => (
+const HomePage = ({ classes }) => (
   <Fade in timeout={1000}>
     <div>
-      <ObjectRecognitionStepper imageUrl={imageUrl} response={response} />
-      <UploadButton onChangeImage={onChangeImage} imageUrl={imageUrl} />
+      <ObjectRecognitionStepper />
+      <UploadButton />
       <div className={classes.wrapper}>
-        <ConfidenceSlider
-          confidence={confidence}
-          onChangeConfidence={onChangeConfidence}
-          disabled={imageUrl === ''}
-        />
-        <SendButton
-          imageUrl={imageUrl}
-          onChangeResponse={onChangeResponse}
-          confidence={confidence}
-        />
+        <ConfidenceSlider />
+        <SendButton />
       </div>
-      <ObjectTable response={response} />
+      <ORCanvas />
+      <ObjectTable />
     </div>
   </Fade>
 );
 
 HomePage.propTypes = {
   classes: PropTypes.object.isRequired,
-  onChangeImage: PropTypes.func.isRequired,
-  onChangeResponse: PropTypes.func.isRequired,
-  onChangeConfidence: PropTypes.func.isRequired,
-  imageUrl: PropTypes.string.isRequired,
-  response: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
-  confidence: PropTypes.number.isRequired,
 };
 
-const mapStateToProps = createStructuredSelector({
-  imageUrl: makeSelectImage(),
-  response: makeSelectResponse(),
-  confidence: makeSelectConfidence(),
-});
-
-function mapDispatchToProps(dispatch) {
-  return {
-    onChangeImage: image => dispatch(changeImageAction(image)),
-    onChangeResponse: response => dispatch(changeResponseAction(response)),
-    onChangeConfidence: confidence =>
-      dispatch(changeConfidenceAction(confidence)),
-  };
-}
-
 const withConnect = connect(
-  mapStateToProps,
-  mapDispatchToProps,
+  null,
+  null,
 );
 
-const withReducer = injectReducer({ key: 'request', reducer });
+const withReducer = injectReducer({ key: 'ObjectRecognitionPage', reducer });
 
 export default compose(
   withReducer,

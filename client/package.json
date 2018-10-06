@@ -1,5 +1,6 @@
 {
   "name": "object_recognition_client",
+  "private": true,
   "version": "0.0.1",
   "description": "React client for object recognition API",
   "engines": {

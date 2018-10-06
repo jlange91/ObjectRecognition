@@ -5,7 +5,8 @@ import { initialState } from './reducer';
  * Direct selector to the HomePage state domain
  */
 
-const selectHomePage = state => state.get('request', initialState);
+const selectHomePage = state =>
+  state.get('ObjectRecognitionPage', initialState);
 
 /**
  * Other specific selectors

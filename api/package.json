@@ -1,5 +1,6 @@
 {
   "name": "object_recognition_server",
+  "private": true,
   "version": "0.0.1",
   "description": "React server for object recognition API",
   "main": "index.js",

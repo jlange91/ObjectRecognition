@@ -1,9 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+
 import { withStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
+
+import { makeSelectImage } from 'containers/HomePage/redux/selectors';
+import { changeImageAction } from 'containers/HomePage/redux/actions';
 
 import styles from './styles';
 import messages from './messages';
@@ -15,14 +21,10 @@ class UploadButton extends React.Component {
   }
 
   handleChange(event) {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-    const { onChangeImage } = this.props;
-
-    reader.onloadend = () => {
-      onChangeImage(reader.result);
-    };
-    reader.readAsDataURL(file);
+    if (event.target.files[0] !== undefined)
+      this.props.onChangeImage(
+        window.URL.createObjectURL(event.target.files[0]),
+      );
   }
 
   render() {
@@ -45,7 +47,6 @@ class UploadButton extends React.Component {
         >
           <label htmlFor="icon-button-file">
             <span
-              id="test1"
               className={classes.imageSrc}
               style={{
                 backgroundImage: `url(${this.props.imageUrl})`,
@@ -76,4 +77,17 @@ UploadButton.propTypes = {
   imageUrl: PropTypes.string.isRequired,
 };
 
-export default withStyles(styles)(UploadButton);
+const mapStateToProps = createStructuredSelector({
+  imageUrl: makeSelectImage(),
+});
+
+function mapDispatchToProps(dispatch) {
+  return {
+    onChangeImage: image => dispatch(changeImageAction(image)),
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(withStyles(styles)(UploadButton));

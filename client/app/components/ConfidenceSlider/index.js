@@ -1,10 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/lab/Slider';
 
+import {
+  makeSelectImage,
+  makeSelectConfidence,
+} from 'containers/HomePage/redux/selectors';
+import { changeConfidenceAction } from 'containers/HomePage/redux/actions';
 import messages from './messages';
 import styles from './styles';
 
@@ -14,7 +22,8 @@ class ConfidenceSlider extends React.Component {
   };
 
   render() {
-    const { classes, confidence, disabled } = this.props;
+    const { classes, confidence, imageUrl } = this.props;
+    const disabled = imageUrl === '';
 
     return (
       <div className={classes.root}>
@@ -40,7 +49,22 @@ ConfidenceSlider.propTypes = {
   classes: PropTypes.object.isRequired,
   confidence: PropTypes.number.isRequired,
   onChangeConfidence: PropTypes.func.isRequired,
-  disabled: PropTypes.bool.isRequired,
+  imageUrl: PropTypes.string.isRequired,
 };
 
-export default withStyles(styles)(ConfidenceSlider);
+const mapStateToProps = createStructuredSelector({
+  imageUrl: makeSelectImage(),
+  confidence: makeSelectConfidence(),
+});
+
+function mapDispatchToProps(dispatch) {
+  return {
+    onChangeConfidence: confidence =>
+      dispatch(changeConfidenceAction(confidence)),
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(withStyles(styles)(ConfidenceSlider));
