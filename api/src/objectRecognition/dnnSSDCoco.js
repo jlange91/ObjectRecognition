@@ -9,7 +9,7 @@ if (!cv.xmodules.dnn) {
 }
 
 // replace with path where you unzipped inception model
-const ssdcocoModelPath = '/server/src/objectRecognition/SSD_300x300';
+const ssdcocoModelPath = '/api/src/objectRecognition/SSD_300x300';
 
 const prototxt = path.resolve(ssdcocoModelPath, 'deploy.prototxt');
 const modelFile = path.resolve(
