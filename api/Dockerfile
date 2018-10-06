@@ -1,7 +1,7 @@
 FROM justadudewhohacks/opencv-nodejs
 
-WORKDIR /server
+WORKDIR /api
 
-COPY . /server
+COPY . /api
 
 RUN npm install

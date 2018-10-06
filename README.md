@@ -149,7 +149,6 @@ docker-compose up
 ## Improvement
 
 - [ ] Sorted data response
-- [ ] Display the image showing rectangles representing the data recognition.
 - [ ] Add additional coco models
 - [ ] Add more custom themes for material-ui
 
