@@ -39,7 +39,13 @@ class ORCanvas extends React.Component {
     return (
       <div style={{ textAlign: 'center' }}>
         <canvas id="ORCanvas" style={{ display: 'none' }} />
-        <img id="ORImage" src="" height="300" alt="ORImage" />
+        <img
+          id="ORImage"
+          src=""
+          height="300"
+          alt="ORImage"
+          style={{ display: this.props.imageUrl === '' ? 'none' : 'inline' }}
+        />
       </div>
     );
   }
